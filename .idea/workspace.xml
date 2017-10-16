@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.css" afterPath="$PROJECT_DIR$/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.html" afterPath="$PROJECT_DIR$/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reset.css" afterPath="$PROJECT_DIR$/reset.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,10 +21,10 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4564">
-              <caret line="212" column="54" lean-forward="false" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
+            <state relative-caret-position="312">
+              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
-                <element signature="e#22191#22195#0" expanded="true" />
+                <element signature="e#22261#22265#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,8 +43,8 @@
       <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+            <state relative-caret-position="237">
+              <caret line="62" column="18" lean-forward="true" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -101,6 +100,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>section</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -111,8 +115,8 @@
         <option value="$PROJECT_DIR$/playlist.html" />
         <option value="$PROJECT_DIR$/song.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/home.html" />
         <option value="$PROJECT_DIR$/reset.css" />
+        <option value="$PROJECT_DIR$/home.html" />
         <option value="$PROJECT_DIR$/home.css" />
       </list>
     </option>
@@ -205,12 +209,12 @@
       <updated>1507964777775</updated>
       <workItem from="1507964779135" duration="6894000" />
       <workItem from="1507982440729" duration="5543000" />
-      <workItem from="1507988596421" duration="13884000" />
+      <workItem from="1507988596421" duration="15762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26321000" />
+    <option name="totallyTimeSpent" value="28199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="275" y="1072" width="1382" height="744" extended-state="6" />
@@ -270,7 +274,7 @@
         <state relative-caret-position="696">
           <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding>
-            <element signature="e#22191#22195#0" expanded="true" />
+            <element signature="e#22261#22265#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -328,7 +332,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#22191#22195#0" expanded="true" />
+            <element signature="e#22261#22265#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -425,18 +429,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4564">
-          <caret line="212" column="54" lean-forward="false" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
+        <state relative-caret-position="312">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
-            <element signature="e#22191#22195#0" expanded="true" />
+            <element signature="e#22261#22265#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+        <state relative-caret-position="237">
+          <caret line="62" column="18" lean-forward="true" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding />
         </state>
       </provider>

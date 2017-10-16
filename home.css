@@ -1,3 +1,12 @@
+.sticky{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:2;
+}
+
+
 section.topbar{
     display: flex;
     justify-content:space-between;
@@ -42,6 +51,10 @@ transform-origin:0 0;
 
 /*tabs*/
 
+section.globalTabs{
+    background: white;
+}
+
 .sectionTitle{
     border-left:2px solid #D43C33;
     font-size:17px;
@@ -49,6 +62,13 @@ transform-origin:0 0;
     margin:20px 0 8px;
     line-height:1;
 }
+
+.tab-content::before{
+    content:'';
+    display:table;
+}
+
+
 
 .tabs{
     display: flex;
@@ -97,6 +117,10 @@ transform-origin:0 0;
     width:100%;
 
 
+}
+
+.tab-content{
+    margin-top:105px;
 }
 
 .tab-content>li{
