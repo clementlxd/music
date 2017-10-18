@@ -24,15 +24,31 @@
 
         }
 
-        section.pointer{}
+        section.pointer{
+            position:absolute;
+            top:-4px;
+            left:50%;
+            z-index:1;
+            transform:rotateZ(7deg);
+            transform-origin:15.5% 0;
+
+
+        }
+
+        section.pointer.pause{
+            transform:rotateZ(-20deg);
+            transform-origin:15.5% 0;
+            transition:2s;
+        }
+
         section.disk{
-            margin-top:20px;
+            margin-top:50px;
 
         }
 
         section.disk .circle{
-            width:248px;
-            height:248px;
+            width:296px;
+            height:296px;
             //border:1px solid red;
             margin:0 auto;
             position:relative;
@@ -43,8 +59,8 @@
             position:absolute;
             top:50%;
             left:50%;
-            margin-left:-76px;
-            margin-top:-76px;
+            margin-left:-92px;
+            margin-top:-92px;
             z-index:-1;
         }
 
@@ -103,16 +119,70 @@
 </head>
 <body>
 <div class="page">
-    <section class="pointer"></section>
+    <section class="pointer pause">
+        <img src="https://i.loli.net/2017/10/18/59e74c33adc2a.png" width=96 height="137" alt="唱针">
+    </section>
     <section class="disk">
         <div class="circle playing ">
-            <img src="//i.loli.net/2017/10/17/59e601318b82e.jpg" width=152 height=152 alt="封面">
+            <img src="//i.loli.net/2017/10/17/59e601318b82e.jpg" width=184 height=184 alt="封面">
         </div>
     </section>
     <section class="lyric"></section>
     <section class="actions"></section>
 
 </div>
+
+
+<script src="./vendors/jquery.min.js"></script>
+<script src="./vendors/av-min.js"></script>
+<script src="./scripts/av.js"></script>
+
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var id = getParameterByName('id');
+    var query=new AV.Query('Song')
+    query.get(id).then(function (song) {
+        let {url,lyric}=song.attributes
+        let video=document.createElement('video')
+        video.src=url
+        video.play()
+        let array=[]
+        let parts=lyric.split('\n')
+        parts.forEach(function (string,index) {
+            let xxx=string.split(']')
+            xxx[0]=xxx[0].substring(1)
+            let regex=/(\d+):([\d.]+)/
+            let matches=xxx[0].match(regex)
+            let minute=+matches[1]
+            let seconds=+matches[2]
+            array.push({
+                time:minute*60+seconds,
+                lyric:xxx[1]
+            })
+        })
+        console.log(array)
+        setInterval(function () {
+            let current=video.currentTime
+            for(var i=0;i<array.length;i++) {
+                if (i === array.length - 1) {
+                    console.log(array[i].lyric)
+                } else if (array[i].time <= current && array[i + 1].time > current) {
+                    console.log(array[i].lyric)
+                    break;
+                }
+            }
+        }, 500)
+    })
+</script>
 
 </body>
 </html>
