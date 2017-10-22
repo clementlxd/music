@@ -242,12 +242,12 @@
     var id = getParameterByName('id');
    // console.log(id)
     var query=new AV.Query('Song')
-    var video=document.createElement('video')
+    var audio=document.createElement('audio')
 
     query.get(id).then(function (song) {
         let {url,lyric}=song.attributes
-        video.src=url
-        video.play()
+        audio.src=url
+        audio.play()
         let array=[]
 
 
@@ -269,7 +269,7 @@
         })
 
         setInterval(function () {
-            let current=video.currentTime
+            let current=audio.currentTime
             for(let i=0;i<array.length;i++) {
                 if (i === array.length - 1) {
                     console.log(array[i].lyric)
@@ -286,12 +286,12 @@
 
     $('.icon-pause').on('click',function () {
         $('.circle').addClass('pause')
-        video.pause()
+        audio.pause()
     })
 
     $('.icon-play').on('click',function () {
         $('.circle').addClass('playing').removeClass('pause')
-        video.play()
+        audio.play()
     })
 
 
