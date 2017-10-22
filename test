@@ -1,0 +1,4 @@
+            let regex=/(\d+):([\d.]+)/
+            let matches=xxx[0].match(regex)
+            let minute=+matches[1]
+            let seconds=+matches[2]
