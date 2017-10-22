@@ -82,20 +82,88 @@
             background-size:cover;
         }
 
-        section.disk .circle.playing>img,
-        section.disk .circle.playing::after{
-            -webkit-animation: spin 10s linear infinite;
-            -o-animation: spin 10s linear infinite;
-            animation: spin 10s linear infinite;
+        .circle.playing>img,
+        .circle.playing::after{
+            -webkit-animation: spin 20s linear infinite;
+            -o-animation: spin 20s linear infinite;
+            animation: spin 20s linear infinite;
         }
 
-        section.disk .circle.playing.pause >img,
-        section.disk .circle.playing.pause ::after{
+        .circle.playing.pause >img,
+        .circle.playing.pause ::after{
             -webkit-animation-play-state: paused;
             -moz-animation-play-state: paused;
             -o-animation-play-state: paused;
             animation-play-state: paused;
         }
+
+        .circle svg{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            color:white;
+            width:45px;
+            height:45px;
+            z-index:2;
+        }
+
+        .circle.playing.pause>.icon-play{
+            display: block;
+        }
+
+        .circle.playing.pause>.icon-pause{
+            display: none;
+        }
+
+        .circle.playing>.icon-play{
+            display: none;
+        }
+
+        .circle.playing>.icon-pause{
+            display: block;
+        }
+        
+        .actions{
+            text-align: center;
+        }
+
+        .buttonWrapper{
+            //position: absolute;
+            bottom:20px;
+            //border:1px solid red;
+            margin:0 auto;
+            display:inline-block;
+
+        }
+
+        .buttonWrapper .open,.download{
+            display: inline-block;
+            height:47px;
+            width:154px;
+            font-size:20px;
+            border:1px solid #d43b32;
+            text-align: center;
+            line-height:47px;
+            border-radius:3px;
+
+        }
+
+        .buttonWrapper .open{
+            color:#d43b32;
+            border:1px solid #d43b32;
+
+        }
+
+        .buttonWrapper .download{
+            color:white;
+            background: #d43b32;
+
+        }
+
+
+
+
 
 
 
@@ -111,6 +179,14 @@
         section.lyric{}
         section.actions{}
     </style>
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 <div class="page">
@@ -120,6 +196,13 @@
     <section class="disk">
         <div class="circle playing ">
             <img src="//i.loli.net/2017/10/17/59e601318b82e.jpg" width=184 height=184 alt="封面">
+            <svg class="icon icon-play" >
+                <use xlink:href="#icon-play"></use>
+            </svg>
+            <svg class="icon icon-pause" >
+                <use xlink:href="#icon-pause"></use>
+            </svg>
+
         </div>
     </section>
     <section class="lyric">
@@ -131,8 +214,8 @@
     <section class="actions">
         <div class="buttonWrapper">
 
-          <a href="#">打开</a>
-          <a href="#">下载</a>
+          <a href="#" class="open">打开</a>
+          <a href="#" class="download">下载</a>
         </div>
 
     </section>
@@ -143,6 +226,7 @@
 <script src="./vendors/jquery.min.js"></script>
 <script src="./vendors/av-min.js"></script>
 <script src="./scripts/av.js"></script>
+<script src="//at.alicdn.com/t/font_349599_76hufbyi42tymn29.js"></script>
 
 <script>
     function getParameterByName(name, url) {
@@ -158,9 +242,10 @@
     var id = getParameterByName('id');
    // console.log(id)
     var query=new AV.Query('Song')
+    var video=document.createElement('video')
+
     query.get(id).then(function (song) {
         let {url,lyric}=song.attributes
-        let video=document.createElement('video')
         video.src=url
         video.play()
         let array=[]
@@ -198,6 +283,18 @@
 
 
     })
+
+    $('.icon-pause').on('click',function () {
+        $('.circle').addClass('pause')
+        video.pause()
+    })
+
+    $('.icon-play').on('click',function () {
+        $('.circle').addClass('playing').removeClass('pause')
+        video.play()
+    })
+
+
 </script>
 
 </body>
